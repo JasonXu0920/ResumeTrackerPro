@@ -74,3 +74,5 @@ D:\practice_projects\ResumeTrackerPro\backend\obj\Debug\net7.0\refint\backend.dl
 D:\practice_projects\ResumeTrackerPro\backend\obj\Debug\net7.0\backend.pdb
 D:\practice_projects\ResumeTrackerPro\backend\obj\Debug\net7.0\backend.genruntimeconfig.cache
 D:\practice_projects\ResumeTrackerPro\backend\obj\Debug\net7.0\ref\backend.dll
+D:\practice_projects\ResumeTrackerPro\backend\bin\Debug\net7.0\AutoMapper.dll
+D:\practice_projects\ResumeTrackerPro\backend\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
