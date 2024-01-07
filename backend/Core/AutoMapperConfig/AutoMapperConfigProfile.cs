@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using backend.Core.Dtos.Company;
+using backend.Core.Dtos.Job;
 using backend.Core.Entities;
 
 namespace backend.Core.AutoMapperConfig
@@ -17,7 +18,9 @@ namespace backend.Core.AutoMapperConfig
             CreateMap<Company, CompanyGetDto>();
 
             // Job
-
+            CreateMap<JobCreateDto, Job>();
+            CreateMap<Job, JobGetDto>()
+                .ForMember(dest => dest.CompanyName, opt => opt.MapFrom(src => src.Company.Name));
             // Candidate
         }
     }
