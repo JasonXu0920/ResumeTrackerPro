@@ -66,5 +66,21 @@ namespace backend.Controllers
             return Ok(convertedCandidates);
         }
         
+        // Download pdf file
+        [HttpGet]
+        [Route("download/{url}")]
+        public IActionResult DownloadPdfFile(string url)
+        {
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Documents", "pdfs", url);
+            if(!System.IO.File.Exists(filePath))
+            {
+                return NotFound("File not found!");
+            }
+
+            var pdfBytes = System.IO.File.ReadAllBytes(filePath);
+            var file = File(pdfBytes, "application/pdf", url);
+
+            return file;
+        }
     }
 }
