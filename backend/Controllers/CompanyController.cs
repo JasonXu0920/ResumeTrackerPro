@@ -15,8 +15,8 @@ namespace backend.Controllers
     [Route("api/[controller]")]
     public class CompanyController : ControllerBase
     {
-        private ApplicationDbContext _context{get; }
-        private IMapper _mapper {get; }
+        private ApplicationDbContext _context { get; }
+        private IMapper _mapper { get; }
         public CompanyController(ApplicationDbContext context, IMapper mapper)
         {
             _context = context;
@@ -42,7 +42,7 @@ namespace backend.Controllers
         [Route("Get")]
         public async Task<ActionResult<IEnumerable<CompanyGetDto>>> GetCompanies()
         {
-            var companies = await _context.Companies.ToListAsync();
+            var companies = await _context.Companies.OrderByDescending(q => q.CreateAt).ToListAsync();
             var convertedCompanies = _mapper.Map<IEnumerable<CompanyGetDto>>(companies);
 
             return Ok(convertedCompanies);

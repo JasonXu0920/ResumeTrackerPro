@@ -1,8 +1,7 @@
-import React from "react";
 import "./home.scss";
 
 
-function Home() {
+const Home = () => {
   return (
     <div className="content home">
       <h3>Welcome to Resume Management</h3>
