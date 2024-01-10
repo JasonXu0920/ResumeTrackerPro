@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 
 namespace backend.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class JobControllers : Controller
     {
         private ApplicationDbContext _context{get; }
