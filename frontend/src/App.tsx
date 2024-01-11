@@ -7,6 +7,8 @@ import CustomLinearLoader from "./components/CustomLinearLoader/CustomLinearLoad
 const Home = lazy(() => import('./pages/home/home'));
 const Companies = lazy(() => import('./pages/companies/Companies'));
 const AddCompany = lazy(() => import("./pages/companies/AddCompany"));
+const Jobs = lazy(() => import("./pages/jobs/Jobs"));
+const AddJob = lazy(() => import("./pages/jobs/AddJob"));
 
 const App = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -21,6 +23,10 @@ const App = () => {
             <Route path="/companies">
               <Route index element={ <Companies /> } />
               <Route path='add' element={ <AddCompany /> } />
+            </Route>
+            <Route path="/jobs">
+              <Route index element={ <Jobs /> } />
+              <Route path='add' element={ <AddJob /> } />
             </Route>
           </Routes>
         </Suspense>     
