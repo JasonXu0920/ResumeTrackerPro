@@ -15,7 +15,7 @@ const Jobs = () => {
   useEffect(() => {
     setLoading(true);
     httpModule
-      .get<IJob[]>("/Company/Get")
+      .get<IJob[]>("/JobControllers/Get")
       .then((response) => {
         setJobs(response.data);
         setLoading(false);
